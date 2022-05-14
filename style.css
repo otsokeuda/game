@@ -1,49 +1,88 @@
 * {
-    background-color: lightskyblue;
+    background-color: darkslateblue;
 }
-
+#button{
+    margin: auto;
+    margin-top: 70px;
+    width: 100px;
+    z-index: 1;
+    position: relative;
+}
 #start {
-    background-color: lime;
-    padding: 50px;
-    border: 1px solid black;
-    margin:auto;
+    cursor:default;
+    margin-top: 70px;
+    transition: all 0.2s ease;
+    
+}
+#start:hover {
+    font-size: 35px;
+    transition: all 0.2s ease;
+    text-shadow: 
+        1px 1px 1px #3fa153,
+        1px 2px 1px #3fa153;
 }
 #game{
-    background-color: lightcoral;
+    background-color: skyblue;
     width: 500px;
     height: 200px;
     border: 1px solid black;
     margin: auto;
+    margin-top: -120px;
+    z-index: 2;
+    position: relative;
 }
 #character{
+    left: 50px;
     width: 20px;
     height: 50px;
-    background-color: red;
     position:relative;
     top: 150px;
+    background: url('purple-1.png.png');
 }
 .animate{
     animation: jump 0.3s linear;
 }
 @keyframes jump{
-    0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+    0%{top: 150px;
+        background: url('purple-2.png.png');}
+    30%{top: 85px;
+        background: url('purple-2.png.png');}
+    70%{top: 85px;
+        background: url('purple-2.png.png');}
+    100%{top: 150px;
+        background: url('purple-2.png.png');}
 }
 #block{
-    background-color: blue;
+    background: url('tötsä-1.png.png');
     width: 20px;
     height: 20px;
     position: relative;
     top: 130px;
     left: 500px;
-    animation: block 1s infinite linear;
+    animation: block 0.8s infinite linear;
 }
 @keyframes block{
-    0%{left: 500px}
-    100%{left: -20px}
+    0%{left: 480px}
+    100%{left: -10px}
 }
-p{
+.score, #scoreSpan{
+    background-color: skyblue;
+    font-size: 30px;
+    margin-top: 0px;
     text-align: center;
+}
+#over {
+    transition: all 0.2s ease;
+    margin: auto;
+    margin-top: -220px;
+    width: 600px;
+    height: 200px;
+    padding: 10px;
+    z-index: 3;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    text-shadow: 
+        1px 1px 1px red,
+        1px 2px 1px red;
 }

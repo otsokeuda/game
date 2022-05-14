@@ -6,13 +6,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <button id="start" onclick="start()">start</button>
+<body onkeypress="jump()">
+    <div id="button">
+        <h1 id="start" onclick="start()">START GAME</h1>
+    </div>
     
     <div id="game"  onclick="jump()" style="display: none;">
          <div id="character"></div>
          <div id="block"></div>
-         <p>Score: <span id="scoreSpan"></span></p>
+         <p class="score"><span id="scoreSpan"></span></p>
+    </div>
+
+    <div id="over" style="display: none;" onclick="restart()">
+        <h1>YOU DIED</h1>
+        <h2>SCORE</h2>
+        <h2 id="res"></h2>
+        
     </div>
     
 </body>
