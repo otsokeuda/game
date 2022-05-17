@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>simple-game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 
 <body onkeypress="jump()">
@@ -12,15 +13,16 @@
     </div>
     
     <div id="game"  onclick="jump()" style="display: none;">
+        <canvas id="canvas"></canvas>
          <div id="character"></div>
          <div id="block"></div>
          <p class="score"><span id="scoreSpan"></span></p>
     </div>
 
     <div id="over" style="display: none;" onclick="restart()">
-        <h1>YOU DIED</h1>
-        <h2>SCORE</h2>
-        <h2 id="res"></h2>
+        <h1 class="died">YOU DIED</h1>
+        <h2 class="ot">SCORE</h2>
+        <h2 class="ot" id="res"></h2>
         
     </div>
     

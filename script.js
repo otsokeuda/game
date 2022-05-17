@@ -4,9 +4,48 @@ var counter=0;
 var foo = document.getElementById('game');
 var oo = document.getElementById('over');
 
+var ctx = document.getElementById("canvas").getContext("2d"),
+    canvasTemp = document.createElement("canvas"),
+    scrollImg = new Image(),
+    tempContext = canvasTemp.getContext("2d"),
+    imgWidth = 0,
+    imgHeight =0,
+    imageData = {},
+    canvasWidth = 500,
+    canvasHeight = 200,
+    scrollVal = 0,
+    speed =2;
+
+    scrollImg.src = "animation/cloud.png";
+    scrollImg.onload = loadImage;
+
+    function loadImage(){
+        imgWidth = scrollImg.width,
+        imgHeight = scrollImg.height;
+        canvasTemp.width = imgWidth;
+        canvasTemp.height =  imgHeight;    
+        render();                
+    }
+    
+
+    function render(){
+        ctx.clearRect(0,0,canvasWidth,canvasHeight);
+    
+        if(scrollVal >= canvasWidth){
+            scrollVal = 0;
+        }
+    
+        scrollVal+=speed;                   
+        ctx.drawImage(scrollImg,canvasWidth-scrollVal,0,scrollVal,imgHeight, 0, 0, scrollVal,imgHeight);
+        ctx.drawImage(scrollImg,scrollVal,0,imgWidth, imgHeight);
+        ctx.drawImage(scrollImg,-scrollVal,0,imgWidth, imgHeight);
+        ctx.drawImage(scrollImg,canvasWidth-scrollVal,0,imgWidth, imgHeight);
+    
+        setTimeout(function(){render();},10);
+    }
 
 
-function jump(){
+function jump(){ 
     if(character.classList == "animate"){return}
     character.classList.add("animate");
     setTimeout(function(){
@@ -23,6 +62,7 @@ function start(){
 
         if(start) {
             counter++;
+            character.classList.add("anima");
         }
 
         if(blockLeft<=70 && blockLeft>20 && characterTop>=130){

@@ -1,5 +1,5 @@
 * {
-    background-color: darkslateblue;
+    background: url(spacebg.png);
 }
 #button{
     margin: auto;
@@ -12,14 +12,13 @@
     cursor:default;
     margin-top: 70px;
     transition: all 0.2s ease;
-    
+    font-family: 'Orbitron', sans-serif;
+    color: white;
 }
 #start:hover {
     font-size: 35px;
     transition: all 0.2s ease;
-    text-shadow: 
-        1px 1px 1px #3fa153,
-        1px 2px 1px #3fa153;
+    color: rgb(0, 205, 109);
 }
 #game{
     background-color: skyblue;
@@ -37,23 +36,33 @@
     height: 50px;
     position:relative;
     top: 150px;
-    background: url('purple-1.png.png');
 }
+.anima{
+    animation: run 0.2s infinite;
+}
+@keyframes run {
+    0% {
+        background: url('animation/purple-1.png.png');}
+    50% {
+        background: url('animation/purple-2.png.png');}
+    100% {
+        background: url('animation/purple-1.png.png');}
+  }
 .animate{
     animation: jump 0.3s linear;
 }
 @keyframes jump{
     0%{top: 150px;
-        background: url('purple-2.png.png');}
+        background: url('animation/purple-2.png.png');}
     30%{top: 85px;
-        background: url('purple-2.png.png');}
+        background: url('animation/purple-2.png.png');}
     70%{top: 85px;
-        background: url('purple-2.png.png');}
+        background: url('animation/purple-2.png.png');}
     100%{top: 150px;
-        background: url('purple-2.png.png');}
+        background: url('animation/purple-2.png.png');}
 }
 #block{
-    background: url('tötsä-1.png.png');
+    background: url('animation/tötsä-1.png.png');
     width: 20px;
     height: 20px;
     position: relative;
@@ -66,13 +75,14 @@
     100%{left: -10px}
 }
 .score, #scoreSpan{
-    background-color: skyblue;
+    background: none;
     font-size: 30px;
-    margin-top: 0px;
+    margin-top: -40px;
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: black;
 }
 #over {
-    transition: all 0.2s ease;
     margin: auto;
     margin-top: -220px;
     width: 600px;
@@ -82,7 +92,22 @@
     position: relative;
     text-align: center;
     cursor: default;
+    
+}
+.died{
     text-shadow: 
         1px 1px 1px red,
         1px 2px 1px red;
+}
+.ot{
+    font-family: 'Orbitron', sans-serif;
+    color: gold;
+    text-shadow: 
+        1px 1px 1px gold;
+}
+#canvas {
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    z-index: -1;
 }
