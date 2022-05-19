@@ -1,5 +1,5 @@
 * {
-    background: url(spacebg.png);
+    background: url(animation/spacebg.png);
 }
 #button{
     margin: auto;
@@ -62,18 +62,39 @@
         background: url('animation/purple-2.png.png');}
 }
 #block{
-    background: url('animation/tötsä-1.png.png');
+    
     width: 20px;
     height: 20px;
     position: relative;
     top: 130px;
     left: 500px;
-    animation: block 0.8s infinite linear;
+    animation: block 1s infinite linear, fly 0.3s infinite;
 }
 @keyframes block{
+    0%{left: 480px;}
+    100%{left: -10px;}
+}
+@keyframes fly{
+    0% {
+        background: url('animation/gBird-1.png');}
+    50% {
+        background: url('animation/gBird-2.png');}
+    100% {
+        background: url('animation/gBird-1.png');}
+  }
+/*#block2{
+    background: url('animation/tötsä-1.png.png');
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 110px;
+    left: 500px;
+    animation: block 5s infinite linear;
+}
+@keyframes block2{
     0%{left: 480px}
     100%{left: -10px}
-}
+}*/
 .score, #scoreSpan{
     background: none;
     font-size: 30px;

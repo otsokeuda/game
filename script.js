@@ -53,17 +53,99 @@ function jump(){
     },300);
 }
 
+
 function start(){
     
     setInterval(function() {
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
         let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-        let result = document.getElementById("scoreSpan").innerHTML = Math.floor(counter/80);
+        //let block2Left = parseInt(window.getComputedStyle(block2).getPropertyValue("left"));
+        let result = document.getElementById("scoreSpan").innerHTML = Math.floor(counter/10);
+
+        if (result == 50) {
+            block.style.animation = "none";
+            block.style.background = "url('animation/rBird.png')";
+            block.style.left = "480px";
+            block.classList.remove("animate"); 
+            void block.offsetWidth; 
+            block.classList.add("animate");
+            setTimeout(function(){
+                block.style.animation = "block 0.9s infinite linear, fly 0.3s infinite";
+              }, 500);           
+        }
+        if (result == 100) {
+            block.style.animation = "none";
+            block.style.background = "url('animation/rBird.png')";
+            block.style.left = "480px";
+            block.classList.remove("animate"); 
+            void block.offsetWidth; 
+            block.classList.add("animate");
+            setTimeout(function(){
+                block.style.animation = "block 0.8s infinite linear, fly 0.3s infinite";
+              }, 500);           
+        }
+        if (result == 200) {
+            block.style.animation = "none";
+            block.style.background = "url('animation/rBird.png')";
+            block.style.left = "480px";
+            block.classList.remove("animate"); 
+            void block.offsetWidth; 
+            block.classList.add("animate");
+            setTimeout(function(){
+                block.style.animation = "block 0.7s infinite linear, fly 0.3s infinite";
+              }, 500);           
+        }
+        if (result == 300) {
+            block.style.animation = "none";
+            block.style.background = "url('animation/rBird.png')";
+            block.style.left = "480px";
+            block.classList.remove("animate"); 
+            void block.offsetWidth; 
+            block.classList.add("animate");
+            setTimeout(function(){
+                block.style.animation = "block 0.6s infinite linear, fly 0.3s infinite";
+              }, 500);           
+        }
+        if (result == 400) {
+            block.style.animation = "none";
+            block.style.background = "url('animation/rBird.png')";
+            block.style.left = "480px";
+            block.classList.remove("animate"); 
+            void block.offsetWidth; 
+            block.classList.add("animate");
+            setTimeout(function(){
+                block.style.animation = "block 0.5s infinite linear, fly 0.3s infinite";
+              }, 500);           
+        }
+        if (result == 500) {
+            block.style.animation = "none";
+            block.style.background = "url('animation/rBird.png')";
+            block.style.left = "480px";
+            block.classList.remove("animate"); 
+            void block.offsetWidth; 
+            block.classList.add("animate");
+            setTimeout(function(){
+                block.style.animation = "block 0.4s infinite linear, fly 0.3s infinite";
+              }, 500);           
+        }
+        if (result == 1000) {
+            block.style.animation = "none";
+            block.style.background = "url('animation/rBird.png')";
+            block.style.left = "480px";
+            block.classList.remove("animate"); 
+            void block.offsetWidth; 
+            block.classList.add("animate");
+            setTimeout(function(){
+                block.style.animation = "block 0.36s infinite linear";
+              }, 500);           
+        }
 
         if(start) {
             counter++;
-            character.classList.add("anima");
+            character.classList.add("anima");           
         }
+
+
 
         if(blockLeft<=70 && blockLeft>20 && characterTop>=130){
             block.style.animation = "none";
