@@ -139,6 +139,10 @@
     text-shadow: 
         1px 1px 1px gold;
 }
+#high, .high{
+    font-family: 'Orbitron', sans-serif;
+    color: dimgray;
+}
 #canvas {
     position: absolute;
     width: 500px;

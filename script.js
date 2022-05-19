@@ -4,6 +4,8 @@ var counter=0;
 var foo = document.getElementById('game');
 var oo = document.getElementById('over');
 
+
+
 var ctx = document.getElementById("canvas").getContext("2d"),
     canvasTemp = document.createElement("canvas"),
     scrollImg = new Image(),
@@ -55,6 +57,7 @@ function jump(){
 
 
 function start(){
+    
     
     setInterval(function() {
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
@@ -152,6 +155,20 @@ function start(){
             clearInterval(result);
             document.getElementById("res").innerHTML = result;
         }           
+
+        var highscore = localStorage.getItem("highscore");
+
+        if(highscore !== null){
+            if (result > highscore) {
+                localStorage.setItem("highscore", result);      
+            }
+        }
+        else{
+            localStorage.setItem("highscore", result);
+        }
+
+        document.getElementById("high").innerHTML = highscore;
+
     }, 10);
 
    if(foo.style.display == '' || foo.style.display == 'none'){
