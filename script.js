@@ -71,7 +71,7 @@ function start(){
             block.classList.add("animate");
             setTimeout(function(){
                 block.style.animation = "block 0.9s infinite linear, fly 0.3s infinite";
-              }, 500);           
+              }, 500);    
         }
         if (result == 100) {
             block.style.animation = "none";
@@ -145,11 +145,10 @@ function start(){
             character.classList.add("anima");           
         }
 
-
-
         if(blockLeft<=70 && blockLeft>20 && characterTop>=130){
             block.style.animation = "none";
             oo.style.display = 'block';
+            start = null;
             clearInterval(result);
             document.getElementById("res").innerHTML = result;
         }           
